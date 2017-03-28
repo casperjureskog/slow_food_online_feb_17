@@ -238,8 +238,7 @@ DEPENDENCIES
   cucumber-rails
   database_cleaner
   factory_girl_rails
-  haml
-  haml-rails (~> 0.9)
+  haml-rails
   jbuilder (~> 2.5)
   jquery-rails
   launchy
