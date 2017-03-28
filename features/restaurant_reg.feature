@@ -6,3 +6,10 @@ Feature: Create account for restaurant
   Scenario: I create an account
     Given I am on the restaurant registration page
     Then I should see "Restaurant registration"
+    When I fill in "Name" with "Leffes pizza"
+    And I fill in "Street" with "Skolgatan 33"
+    And I fill in "Zip Code" with "41133"
+    And I fill in "City" with "Gothenburg"
+    And I fill in "Food Style" with "Pizza"
+    And I click "Submit"
+    Then I should see "Restaurant registration complete"
