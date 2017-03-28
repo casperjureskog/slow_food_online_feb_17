@@ -5,5 +5,4 @@ Feature: Create account for restaurant
 
   Scenario: I create an account
     Given I am on the restaurant registration page
-    Then I should see "restaurant registration"
-    
+    Then I should see "Restaurant registration"
