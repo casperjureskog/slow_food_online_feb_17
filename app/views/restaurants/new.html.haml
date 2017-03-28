@@ -1,1 +1,28 @@
 %h2 Restaurant registration
+
+= form_for (@restaurants) do |f|
+  .field
+    = f.label :name
+    %br/
+    = f.text_field :name
+  .field
+    = f.label :street
+    %br/
+    = f.text_field :street
+  .field
+    = f.label :zip_code
+    %br/
+    = f.number_field :zip_code
+  .field
+    = f.label :city
+    %br/
+    = f.text_field :city
+  .field
+    = f.label :food_style
+    %br/
+    = f.text_field :food_style
+  .actions
+    = f.submit "Submit"
+
+- if flash[:notice]
+  .notice= flash[:notice]
