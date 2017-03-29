@@ -1,7 +1,7 @@
 Feature: Create menu show page
   As a visitor
   In order to select dishes from a menu
-  I would like to be able to visit a menu page and see the dishes available to me
+  I would like to be able to visit a menu page and see the restaurants menu name
 
   Background:
   Given the following restaurant exists
@@ -11,7 +11,7 @@ Feature: Create menu show page
     | name           | restaurant  |
     | Nisses kebaber | NisseKebbab |
 
-  Scenario: I create an menu page with menus
+  Scenario: I create an menu page and the menu´s name i displayed
     Given I am on the restaurant menu page
     Then I should see "Menu"
     And I should see "NisseKebbab"
