@@ -12,6 +12,7 @@ Feature: Create menu show page
   Scenario: I create an menu page with menus
     Given I am on the restaurant menu page
     Then I should see "Menu"
+    And I should see "NisseKebbab"
     And I should see "kebbab"
     And I should see "130 kr"
     And I should see "pizza"
