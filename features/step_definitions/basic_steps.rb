@@ -12,7 +12,7 @@ end
 
 Given(/^I am on the restaurant menu page$/) do
   restaurant = Restaurant.find_by(name: 'NisseKebbab').id
-  visit '/restaurants/'+restaurant.to_s+'/menu/:id'
+  visit '/restaurants/'+restaurant.to_s+'/menus/:id'
 end
 
 Given(/^the following restaurant exists$/) do |table|
