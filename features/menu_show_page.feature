@@ -5,14 +5,10 @@ Feature: Create menu show page
 
   Background:
   Given the following restaurant exists
-    | name        | street     | zip_code | city  | food_style |
-    | NisseKebbab | kungsg 5   | 13456    | sthlm | kina       |
-  Given the following menu exists
-    | name           | restaurant  |
-    | Nisses kebaber | NisseKebbab |
 
   Scenario: I create an menu page and the menu´s name i displayed
-    Given I am on the restaurant menu page
+    Given the following menu exists
+    And I am on the restaurant menu page
     Then I should see "Menu"
-    And I should see "NisseKebbab"
-    And I should see "Nisses kebaber"
+    And I should see "Nisses"
+    And I should see "pizzor"

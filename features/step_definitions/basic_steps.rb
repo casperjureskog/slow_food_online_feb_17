@@ -10,20 +10,15 @@ When(/^I click "([^"]*)"$/) do |button|
   click_link_or_button button
 end
 
+Given(/^the following restaurant exists$/) do
+   @restaurant = FactoryGirl.create(:restaurant)
+end
+
 Given(/^I am on the restaurant menu page$/) do
-  restaurant = Restaurant.find_by(name: 'NisseKebbab').id
+  restaurant = @restaurant.id
   visit '/restaurants/'+restaurant.to_s+'/menus/:id'
 end
 
-Given(/^the following restaurant exists$/) do |table|
-  table.hashes.each do |hash|
-   Restaurant.create!(hash)
-  end
-end
-
-Given(/^the following menu exists$/) do |table|
-  table.hashes.each do |hash|
-   restaurant = Restaurant.find_by(name: hash[:restaurant])
-   Menu.create!(name: hash[:name], restaurant: restaurant)
-  end
+Given(/^the following menu exists$/) do
+   FactoryGirl.create(:menu , restaurant: @restaurant)
 end
