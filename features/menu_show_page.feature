@@ -7,14 +7,12 @@ Feature: Create menu show page
   Given the following restaurant exists
     | name        | street     | zip_code | city  | food_style |
     | NisseKebbab | kungsg 5   | 13456    | sthlm | kina       |
-
+  Given the following menu exists
+    | name           | restaurant  |
+    | Nisses kebaber | NisseKebbab |
 
   Scenario: I create an menu page with menus
     Given I am on the restaurant menu page
     Then I should see "Menu"
     And I should see "NisseKebbab"
-    And I should see "kebbab"
-    And I should see "130 kr"
-    And I should see "pizza"
-    And I should see "170 kr"
-    Then I should see "buy button"
+    And I should see "Nisses kebaber"

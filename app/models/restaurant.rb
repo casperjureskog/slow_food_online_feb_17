@@ -5,5 +5,5 @@ class Restaurant < ApplicationRecord
   validates :city, presence: true
   validates :food_style, presence: true
 
-
+  has_one :menu
 end

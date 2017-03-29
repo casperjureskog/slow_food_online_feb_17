@@ -20,3 +20,10 @@ Given(/^the following restaurant exists$/) do |table|
    Restaurant.create!(hash)
   end
 end
+
+Given(/^the following menu exists$/) do |table|
+  table.hashes.each do |hash|
+   restaurant = Restaurant.find_by(name: hash[:restaurant])
+   Menu.create!(name: hash[:name], restaurant: restaurant)
+  end
+end
