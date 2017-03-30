@@ -1,5 +1,5 @@
 require 'cucumber/rails'
-require "factory_girl_rails"
+require "factory_girl"
 ActionController::Base.allow_rescue = false
 
 begin

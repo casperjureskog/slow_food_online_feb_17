@@ -15,8 +15,7 @@ Given(/^the following restaurant exists$/) do
 end
 
 Given(/^I am on the restaurant menu page$/) do
-  restaurant = @restaurant.id
-  visit '/restaurants/'+restaurant.to_s+'/menus/:id'
+  visit '/restaurants/'+@restaurant.id.to_s+'/menus/:id'
 end
 
 Given(/^the following menu exists$/) do

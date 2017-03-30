@@ -11,4 +11,4 @@ Feature: Create menu show page
     And I am on the restaurant menu page
     Then I should see "Menu"
     And I should see "Nisses"
-    And I should see "pizzor"
+    And I should see "Pizzor"
