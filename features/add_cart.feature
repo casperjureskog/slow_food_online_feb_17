@@ -20,3 +20,5 @@ Feature: Add dish to cart
    Then I should see "Kebabrulle"
    And I should see "Falafel"
    When I click "Buy" on "Kebabrulle"
+   And I should see "Kebabrulle has been added to your order"
+   
