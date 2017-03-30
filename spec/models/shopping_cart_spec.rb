@@ -8,5 +8,4 @@ RSpec.describe ShoppingCart, type: :model do
  describe 'associations' do
    it { is_expected.to have_many :shopping_cart_items}
  end
-
 end
