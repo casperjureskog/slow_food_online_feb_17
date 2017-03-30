@@ -4,5 +4,9 @@
 =@restaurant.menu.name
 
 -@restaurant.menu.dishes.each do |dish|
+ %div{class: "dish-#{dish.id}"}
   =dish.name
   =dish.price
+  = form_tag(cart_items_path(cart_id: session[:cart_id]), method: 'post') do
+   = hidden_field_tag(:dish_id, dish.id)
+   = submit_tag('Buy')
