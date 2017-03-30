@@ -11,7 +11,7 @@ When(/^I click "([^"]*)"$/) do |button|
 end
 
 Given(/^the following restaurant exists$/) do
-   @restaurant = FactoryGirl.create(:restaurant)
+   @restaurant = create(:restaurant)
 end
 
 Given(/^I am on the restaurant menu page$/) do
@@ -19,5 +19,5 @@ Given(/^I am on the restaurant menu page$/) do
 end
 
 Given(/^the following menu exists$/) do
-   FactoryGirl.create(:menu , restaurant: @restaurant)
+   create(:menu , restaurant: @restaurant)
 end

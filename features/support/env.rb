@@ -9,3 +9,5 @@ rescue NameError
 end
 
 Cucumber::Rails::Database.javascript_strategy = :truncation
+
+include FactoryGirl::Syntax::Methods
