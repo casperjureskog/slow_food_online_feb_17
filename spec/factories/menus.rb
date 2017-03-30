@@ -1,6 +1,6 @@
 FactoryGirl.define do
   factory :menu do
-    name "Pizzor"
+    name "MyString"
     association :restaurant
   end
 end
