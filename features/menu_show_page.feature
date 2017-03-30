@@ -7,12 +7,15 @@ Feature: Create menu show page
    Given the following restaurants exist
     | name        |
     | NisseKebbab |
+    | AmberBurger |
    Given the following menus exist
-    | name            |
-    | Nisses Takeaway |
+    | name            | restaurant  |
+    | Nisses Takeaway | NisseKebbab |
+    | Tasty burgers   | AmberBurger |
 
   Scenario: I create an menu page and the menu´s name i displayed
-    Given I am on the restaurant menu page
+    Given I am on the restaurant menu page for "Nisses Takeaway"
     And I should see "Menu"
     And I should see "NisseKebbab"
+    And I should not see "Tasty burgers"
     Then I should see "Nisses Takeaway"
