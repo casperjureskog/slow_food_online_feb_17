@@ -19,9 +19,8 @@ Feature: Add dish to cart
    Given I am on the restaurant menu page for "Nisses Takeaway"
    Then I should see "Kebabrulle"
    And I should see "Falafel"
-   When I click "Buy" on "Kebabrulle"
+   And I click "Buy" on "Kebabrulle"
    And I should see "Kebabrulle has been added to your order"
    Then I click "Buy" on "Falafel"
    And I should see "Falafel has been added to your order"
-   And I should see "2 dishes cart"
-   Then show me the page
+   Then I should see "2 dishes in cart"
