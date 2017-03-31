@@ -4,6 +4,8 @@ class ShoppingCartsController < ApplicationController
 private
 
   def get_shopping_cart
+    if session[:cart_id]
     @cart = ShoppingCart.find(session[:cart_id])
+  end
   end
 end

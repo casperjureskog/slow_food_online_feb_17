@@ -1,12 +1,12 @@
 %h2 Menu
 = notice
-=@restaurant.name
-=@restaurant.menu.name
+= @restaurant.name
+= @restaurant.menu.name
 
--@restaurant.menu.dishes.each do |dish|
- %div{class: "dish-#{dish.id}"}
-  =dish.name
-  =dish.price
-  = form_tag(cart_items_path(cart_id: session[:cart_id]), method: 'post') do
-   = hidden_field_tag(:dish_id, dish.id)
-   = submit_tag('Buy')
+- @restaurant.menu.dishes.each do |dish|
+  %div{class: "dish-#{dish.id}"}
+    = dish.name
+    = dish.price
+    = form_tag(items_path, method: 'post') do
+      = submit_tag('Buy')
+      = hidden_field_tag(:dish_id, dish.id)
