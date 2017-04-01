@@ -1,7 +1,6 @@
 %h2 Menu
 = notice
-- nisse = @cart_nr
-= nisse
+= @cart_nr
 dishes in cart
 = @restaurant.name
 = @restaurant.menu.name
@@ -9,6 +8,6 @@ dishes in cart
   %div{class: "dish-#{dish.id}"}
     = dish.name
     = dish.price
-    = form_tag(@cartpath, method: 'post') do
+    = form_tag(items_path, method: 'post') do
       = submit_tag('Buy')
       = hidden_field_tag(:dish_id, dish.id)

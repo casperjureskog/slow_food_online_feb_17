@@ -12,8 +12,7 @@ class ShoppingCartItemsController < ApplicationController
 
  def get_shopping_cart
    if session[:cart_id]
-     @cart = ShoppingCart.find(params[:cart_id])
-     @cartpath = cart_items_path(cart_id: session[:cart_id])
+     @cart = ShoppingCart.find(session[:cart_id])
    else
      @cart = ShoppingCart.create
    end
