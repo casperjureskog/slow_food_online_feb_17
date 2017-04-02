@@ -5,6 +5,6 @@ class IndexController < ApplicationController
   end
 
   def create
-    binding.pry
+    @index = Index.new
   end
 end
