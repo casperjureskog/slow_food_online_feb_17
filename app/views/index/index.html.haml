@@ -1,9 +1,6 @@
 %h1 List Of Restaurants
 %h3 List of food category
-=select(@restaurants , "List of food category") do
-  = content_tag(:option, "List of food category")
-  - @restaurants.each do |c|
-    = content_tag(:option, c.food_style, value: c.id)
+=select("post", "index_index_path", @restaurants.distinct.pluck(:food_style) {|p| [ p.food_style, p.food_style ] }, {prompt: 'List of food category'})
 %ul
   - @restaurants.each do |restaurant|
     %li

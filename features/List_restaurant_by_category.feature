@@ -14,5 +14,5 @@ I should be able to select and see restaurant's by category
     Given I am on the index page
     Then show me the page
     And I should see drop down menu "List of food category"
-    And I select "Pizza" from "List of food category"
+    And I select "Pizza" from "post_index_index_path"
     And I should see "Pizza category"
