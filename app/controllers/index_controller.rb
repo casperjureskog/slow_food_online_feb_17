@@ -4,5 +4,7 @@ class IndexController < ApplicationController
     @restaurants = Restaurant.all
   end
 
-  
+  def create
+    binding.pry
+  end
 end
