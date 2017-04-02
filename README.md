@@ -24,7 +24,7 @@ $rake db:migrate
 ### Deployment
 
 We are using [Semaphoreci CI](https://semaphoreci.com)  for continous integration and [Heroku](http://heroku.com/)
-
+The site address [https://slowfood-online-feb-17.herokuapp.com](https://slowfood-online-feb-17.herokuapp.com)
 
 ## Information aboute prodject:
 
