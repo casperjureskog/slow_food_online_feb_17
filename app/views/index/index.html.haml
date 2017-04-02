@@ -1,5 +1,9 @@
 %h1 List Of Restaurants
-=select("post", "List Of Restaurants", @restaurants.all.collect {|p| [ p.food_style, p.id ] }, { include_blank: true })
+%h3 List of food category
+=select(@restaurants , "List of food category") do
+  = content_tag(:option, "List of food category")
+  - @restaurants.each do |c|
+    = content_tag(:option, c.food_style, value: c.id)
 %ul
   - @restaurants.each do |restaurant|
     %li
