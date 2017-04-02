@@ -1,4 +1,5 @@
 %h1 List Of Restaurants
+=select("post", "List Of Restaurants", @restaurants.all.collect {|p| [ p.food_style, p.id ] }, { include_blank: true })
 %ul
   - @restaurants.each do |restaurant|
     %li

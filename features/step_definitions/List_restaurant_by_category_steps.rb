@@ -5,3 +5,9 @@ end
 Given(/^I select "([^"]*)" from "([^"]*)"$/) do |option, category|
   select option, from: category
 end
+
+Given(/^the following restaurants exists$/) do |table|
+  table.hashes.each do |hash|
+    create(:restaurant, name: hash[:name], food_style: hash[:food_style] )
+  end
+end
