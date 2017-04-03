@@ -3,7 +3,6 @@ class ShoppingCartsController < ApplicationController
 
   def create
     dish = Dish.find(params[:dish_id])
-    binding.pry
     @cart.add(dish, dish.price)
     flash[:notice] = "#{dish.name} has been added to your order"
     redirect_back(fallback_location: root_path)
