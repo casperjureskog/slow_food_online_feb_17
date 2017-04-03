@@ -15,7 +15,7 @@ Feature: Add dish to cart
     | Kebabrulle | 180   | Nisses Takeaway |
     | Falafel    | 190   | Nisses Takeaway |
 
-  Scenario: I buy two dishes and put it in the cart
+  Scenario: I buy a dish and put it in the cart
     Given I am on the restaurant menu page for "Nisses Takeaway"
     Then I should see "Kebabrulle"
     And I should see "Falafel"
