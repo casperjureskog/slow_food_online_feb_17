@@ -28,4 +28,3 @@ Feature: Add dish to cart
     And I click "Buy" on "Falafel"
     And I should see "Falafel has been added to your order"
     Then I should see "2 dishes in cart"
-    And show me the page
