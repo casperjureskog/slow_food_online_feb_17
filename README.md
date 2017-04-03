@@ -1,6 +1,7 @@
 # SloFo
 
-This is middcorse prodject for CraftAcademy Class Feb-april 2017
+This is midcourse project for CraftAcademy Class Feb-april 2017
+
 
 **Pivotal Tracker**
 [Pivotal Tracker for SloFo](https://www.pivotaltracker.com/n/projects/1996373).
@@ -26,13 +27,10 @@ $rake db:migrate
 We are using [Semaphoreci CI](https://semaphoreci.com)  for continous integration and [Heroku](http://heroku.com/)
 The site address [https://slowfood-online-feb-17.herokuapp.com](https://slowfood-online-feb-17.herokuapp.com)
 
-## Information aboute prodject:
+## Information about project:
 
 * Ruby version
-  Ruby 5.0.2
-
-* System dependencies
-  acts_as_shopping_cart  https://github.com/crowdint/acts_as_shopping_cart
+  Ruby 2.3.3
 
 * Configuration
   - Ruby on rails
@@ -49,9 +47,3 @@ The site address [https://slowfood-online-feb-17.herokuapp.com](https://slowfood
   - **rake** to run all test
   - **rspec** to run spec test
   - **cucumber** to run feature test
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
