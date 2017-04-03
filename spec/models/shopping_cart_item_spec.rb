@@ -11,6 +11,10 @@ RSpec.describe ShoppingCartItem, type: :model do
     it { is_expected.to have_db_column :price_currency }
   end
 
+  describe 'associations' do
+   it { is_expected.to belong_to :shopping_cart}
+  end
+
   it 'should have a valid factory' do
     expect(create(:shopping_cart_item)).to be_valid
   end

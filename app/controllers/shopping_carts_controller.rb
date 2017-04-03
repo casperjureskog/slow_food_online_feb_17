@@ -1,0 +1,17 @@
+class ShoppingCartsController < ApplicationController
+  before_action :get_shopping_cart
+
+  def create
+    dish = Dish.find(params[:dish_id])
+    binding.pry
+    @cart.add(dish, dish.price)
+    flash[:notice] = "#{dish.name} has been added to your order"
+    redirect_back(fallback_location: root_path)
+  end
+
+  private
+
+  def get_shopping_cart
+    @cart = ShoppingCart.find(params[:cart_id])
+  end
+end
