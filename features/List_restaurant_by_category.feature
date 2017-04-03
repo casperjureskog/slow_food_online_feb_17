@@ -13,6 +13,7 @@ I should be able to select and see restaurant's by category
   Scenario: select restaurant by category
     Given I am on the index page
     And I should see drop down menu "List of food category"
-    And I select "Pizza" from "post_index_index_path"
-    Then show me the page
-    And I should see "Pizza category"
+    And I select "Pizza" from "post_category"
+    And I click "Submit"
+    And I should see "Nisse pizza"
+    And I should not see "Nisse kebab"

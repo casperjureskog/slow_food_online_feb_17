@@ -4,7 +4,8 @@ class IndexController < ApplicationController
     @restaurants = Restaurant.all
   end
 
-  def create
-    @index = Index.new
+  def select_category
+    @restaurants = Restaurant.where(food_style: params[:post][:category])
+    render 'index'
   end
 end
