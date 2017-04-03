@@ -1,9 +1,10 @@
 %h2 Menu
 = notice
 = @cart_nr
-dishes in cart
-= @restaurant.name
-= @restaurant.menu.name
+dishes in cart.
+%p= @restaurant.name
+%p= @restaurant.menu.name
+%h3 Our fine dishes
 - @restaurant.menu.dishes.each do |dish|
   %div{class: "dish-#{dish.id}"}
     = dish.name
