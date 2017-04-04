@@ -14,3 +14,10 @@ Feature: Create the registration form
    And I fill in "Password confirmation" with "12345678"
    And I click "Sign up"
    Then I should see "You have signed up successfully."
+
+  Scenario: I create an account without e-mail
+   Given I am on the registration page
+   Then I should see "Sign up"
+   When I fill in "Email" with ""
+   Then I click "Sign up"
+   And I should see "Email can't be blank"
