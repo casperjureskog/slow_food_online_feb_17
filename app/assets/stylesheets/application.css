@@ -1,37 +1,5 @@
-.alert {
-   background-color: #f2dede ;
-   border-color: #eed3d7 ;
-   color: #b94a48 ;
-   text-align: left;
-}
-
-.notice {
-   background-color: #dff0d8 ;
-   border-color: #d6e9c6 ;
-   color: #468847 ;
-   text-align: left;
-}
-
-input[type=text], select {
-    width: 30%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-
-input[type=submit] {
-    width: 25%;
-    background-color: #4CAF50;
-    color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-input[type=submit]:hover {
-    background-color: #45a049;
-}
+/*
+*= require_tree .
+*= require_self
+*= require foundation_and_overrides
+*/
