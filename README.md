@@ -1,6 +1,7 @@
 # SloFo
 
-This is midcourse project for CraftAcademy Class Feb-april 2017
+This is midcourse project for CraftAcademy Class Feb-april 2017.
+It's a slow food internet order page.
 
 
 **Pivotal Tracker**
@@ -47,3 +48,6 @@ The site address [https://slowfood-online-feb-17.herokuapp.com](https://slowfood
   - **rake** to run all test
   - **rspec** to run spec test
   - **cucumber** to run feature test
+
+* Dependencies:
+  - acts as shoppingcart gem  
