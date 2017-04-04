@@ -1,4 +1,4 @@
-Given(/^I have an account$/) do
+Given(/^I sign up for an account$/) do
   visit new_user_registration_path
   fill_in 'Name', with: 'Nubbe'
   fill_in 'Email', with: 'nubbe@nubbe.com'
