@@ -6,10 +6,8 @@ Feature: Visitor sign in
   Scenario: I sign in to an account
    Given I have an account
    And I am on the sign in page
-   Then show me the page
    Then I should see "Sign in"
-   When I fill in "Name" with "Nubbe"
    And I fill in "Email" with "nubbe@nubbe.com"
    And I fill in "Password" with "12345678"
    And I click "Sign in"
-   Then I should see "You have signed in successfully."
+   Then I should see "Signed in successfully."
