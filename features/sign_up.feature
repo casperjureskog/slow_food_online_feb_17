@@ -3,7 +3,6 @@ Feature: Create the registration form
   In order to place an order
   I would like to create an account
 
-
   Scenario: I create an account
    Given I am on the registration page
    Then I should see "Sign up"

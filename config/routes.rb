@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  devise_for :users
+  devise_for :users, only: [:registration]
   root controller: :index, action: :index
   post '/', controller: :index, action: :select_category, as: :select_category
 
