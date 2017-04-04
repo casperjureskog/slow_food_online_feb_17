@@ -5,6 +5,7 @@ Given(/^I have an account$/) do
   fill_in 'Password', with: '12345678'
   fill_in 'Password confirmation', with: '12345678'
   click_link_or_button 'Sign up'
+  click_link_or_button 'Sign Out'
 end
 
 Given(/^I am on the sign in page$/) do
