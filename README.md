@@ -22,9 +22,7 @@ Then:
 ```
 $rake db:migrate
 ```
-```
-brew install phantomjs
-```
+
 ### Deployment
 
 We are using [Semaphoreci CI](https://semaphoreci.com)  for continous integration and [Heroku](http://heroku.com/)
