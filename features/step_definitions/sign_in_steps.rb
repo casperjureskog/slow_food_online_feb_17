@@ -4,6 +4,6 @@ end
 
 Given(/^the following user exist$/) do |table|
   table.hashes.each do |hash|
-    create(:user, name: hash[:name], email: hash[:email], password: hash[:password])
+    User.create!(name: hash[:name] , email: hash[:email] , password: hash[:password])
   end
 end
