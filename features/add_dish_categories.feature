@@ -17,7 +17,7 @@ Feature: Add different categories for the restaurant dishes
     | Ice cream  | 230   | Nisses Takeaway | Dessert     |
 
   Scenario: I would like to see dishes sorted by category
-    Given I am on the dishes show page
+    Given I am on the restaurant menu page for "Nisses Takeaway"
     Then I should see "Kebabrulle" in "Main course"
     And I should see "Falafel" in "Starters"
     And I should see "Ice cream" in "Dessert"
