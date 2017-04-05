@@ -4,6 +4,6 @@ FactoryGirl.define do
     price 9.99
     description "About"
     association :menu
-    category "main"
+    category "Main course"
   end
 end

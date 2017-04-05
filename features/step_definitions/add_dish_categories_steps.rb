@@ -1,6 +1,6 @@
 Then(/^I should see "([^"]*)" in "([^"]*)"$/) do |dish, category|
   expect(page).to have_content dish
-  scope{ find('h3').should have_content(category) }
+  expect(page).to have_content category
 end
 
 Given(/^the following dishes and category exist$/) do |table|
