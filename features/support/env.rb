@@ -19,5 +19,9 @@ Capybara.register_driver :poltergeist do |app|
 end
 Capybara.javascript_driver = :poltergeist
 
+After do
+  Warden.test_reset!
+end
+
 Warden.test_mode!
 World Warden::Test::Helpers

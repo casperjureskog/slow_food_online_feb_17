@@ -13,7 +13,8 @@
   %body
     %p.notice= notice
     %p.alert= alert
-    = link_to_if(current_user, "Sign Out", destroy_user_session_path, { method: :delete })
+    - if current_user
+      = link_to 'Sign Out', destroy_user_session_path, {method: :delete}
     %nav.top-bar.nav-desktop
       .wrap
         .top-bar-left
@@ -38,4 +39,3 @@
         %a{:href => "#", :target => "_blank"}
           %span Contact Us
         %br/
-        
