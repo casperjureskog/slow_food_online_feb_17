@@ -12,12 +12,14 @@ Feature: Add different categories for the restaurant dishes
     | Nisses Takeaway | NisseKebbab |
    And the following dishes and category exist
     | name       | price | menu            | category    |
-    | Kebabrulle | 180   | Nisses Takeaway | Main course |
-    | Falafel    | 190   | Nisses Takeaway | Starters    |
+    | Kebabrulle | 180   | Nisses Takeaway | Starters    |
+    | Falafel    | 190   | Nisses Takeaway | Main course |
     | Ice cream  | 230   | Nisses Takeaway | Dessert     |
 
   Scenario: I would like to see dishes sorted by category
     Given I am on the restaurant menu page for "Nisses Takeaway"
+    Then show me the page
     Then I should see "Kebabrulle" in "Main course"
     And I should see "Falafel" in "Starters"
     And I should see "Ice cream" in "Dessert"
+  

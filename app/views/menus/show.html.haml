@@ -7,27 +7,9 @@
 dishes in cart.
 %h3 Our fine dishes
 %h2 Category
-- if @starters.exists?
-  %h3 Starters
-  - @starters.each do |dish|
-    %div{class: "dish-#{dish.id}"}
-      = link_to dish.name, dish_path(dish)
-      = dish.price
-      = form_tag(items_path, method: 'post') do
-        = submit_tag('Buy')
-        = hidden_field_tag(:dish_id, dish.id)
-- if @mains.exists?
-  %h3 Main course
-  - @mains.each do |dish|
-    %div{class: "dish-#{dish.id}"}
-      = link_to dish.name, dish_path(dish)
-      = dish.price
-      = form_tag(items_path, method: 'post') do
-        = submit_tag('Buy')
-        = hidden_field_tag(:dish_id, dish.id)
-- if @dessert.exists?
-  %h3 Dessert
-  - @dessert.each do |dish|
+- @restaurant.menu.dishes.distinct.pluck(:category).uniq.each do |category|
+  %h3= category
+  - @restaurant.menu.dishes.where(category: category).each do |dish|
     %div{class: "dish-#{dish.id}"}
       = link_to dish.name, dish_path(dish)
       = dish.price
