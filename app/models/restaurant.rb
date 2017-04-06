@@ -7,4 +7,5 @@ class Restaurant < ApplicationRecord
   validates :description, presence: true
 
   has_one :menu
+  has_one :rating 
 end
