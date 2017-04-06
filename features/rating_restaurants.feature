@@ -16,7 +16,7 @@ Feature: Rate restaurant on checkout page
     | Falafel    | 100   | Nisses Takeaway |
    And the following rating exist
     | rating | counter  | restaurant    |
-    | 3      | 30       | NissesKebbab  |
+    | 3      | 30       | NisseKebbab  |
 
     Scenario: I complete payment and receive a receipt
       Given I am on the restaurant menu page for "Nisses Takeaway"
@@ -24,6 +24,7 @@ Feature: Rate restaurant on checkout page
       And I click "Checkout"
       And I should see "Total: 180"
       And I click "Finalize order"
+      Then show me the page
       And I should see "Thank you for your order"
       And I should see "Rating 3"
       And I select "5" from "Rating"
