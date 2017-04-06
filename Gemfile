@@ -15,7 +15,6 @@ gem 'foundation-rails'
 gem 'acts_as_shopping_cart'
 gem 'rails-assets-gmaps', source: 'https://rails-assets.org'
 gem 'devise'
-gem 'ratyrate'
 
 group :development, :test do
   gem 'pry'
