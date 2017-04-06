@@ -8,11 +8,11 @@ RSpec.describe Restaurant, type: :model do
     it { is_expected.to have_db_column :city }
     it { is_expected.to have_db_column :food_style }
     it { is_expected.to have_db_column :description }
-    it { is_expected.to have_db_column :rating }
   end
 
   describe 'Associations' do
     it { is_expected.to have_one :menu }
+    it { is_expected.to have_one :rating }
   end
 
   describe 'Validations' do
@@ -22,7 +22,6 @@ RSpec.describe Restaurant, type: :model do
     it { is_expected.to validate_presence_of :city }
     it { is_expected.to validate_presence_of :food_style }
     it { is_expected.to validate_presence_of :description }
-    it { is_expected.to validate_presence_of :rating }
   end
 
   describe 'Factory' do
