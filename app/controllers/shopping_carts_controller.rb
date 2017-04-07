@@ -4,6 +4,7 @@ class ShoppingCartsController < ApplicationController
   def complete
     @rest = @cart.shopping_cart_items[0].item.menu.restaurant
     @rating = Rating.find_by(restaurant_id: @rest.id)
+    binding.pry
     @cart.update(paid: 'true')
     session.delete(:cart_id)
   end

@@ -7,6 +7,6 @@
 %br
 Rating
 = @rating.rating
-= form_tag select_category_path, method: 'post' do |f|
-  = f.select(:rating , ['Starter','Main course','Dessert'])
-  = f.submit "Add dish", class: 'button expanded'
+= form_for [@rating], url: complete_path do |f|
+  = f.select(:rating, ['1','2','3','4','5'])
+  = f.submit "Rating"
