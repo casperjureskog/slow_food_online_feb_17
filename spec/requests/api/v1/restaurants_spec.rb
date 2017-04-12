@@ -9,7 +9,7 @@ RSpec.describe Api::V1::RestaurantsController, type: :request do
 
       expected_response = {
         'entries' => [{
-          'name' => restaurant.name, 'description' => restaurant.description, 'id' => restaurant.id
+           'id' => restaurant.id, 'name' => restaurant.name, 'description' => restaurant.description,
           }]
       }
 
