@@ -3,13 +3,13 @@ require 'rails_helper'
 RSpec.describe Api::V1::RestaurantsController, type: :request do
 
   describe 'GET /v1/restaurants' do
-    it 'should return all the restaurant´s name and description' do
+    it 'should return all the restaurant´s name, id and description' do
       restaurant = create(:restaurant)
       get '/api/v1/restaurants'
 
       expected_response = {
         'entries' => [{
-          'name' => restaurant.name, 'description' => restaurant.description
+          'name' => restaurant.name, 'description' => restaurant.description, 'id' => restaurant.id
           }]
       }
 
