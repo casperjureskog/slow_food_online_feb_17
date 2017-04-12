@@ -4,6 +4,10 @@ class Api::V1::RestaurantsController < ApplicationController
   end
 
   def show
-    @restaurants = Restaurant.find(params[:id])
+    begin
+      @restaurant = Restaurant.find(params[:id])
+    rescue
+      render json: { message: "error"}, status: 404
+    end
   end
 end
