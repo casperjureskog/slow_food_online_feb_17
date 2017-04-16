@@ -15,10 +15,12 @@ gem 'foundation-rails'
 gem 'acts_as_shopping_cart'
 gem 'rails-assets-gmaps', source: 'https://rails-assets.org'
 gem 'devise'
+gem 'stripe-rails'
+gem 'stripe', '~> 1.55.0'
 gem 'rack-cors', require: 'rack/cors'
 
 group :development, :test do
-  gem 'pry'
+  gem 'pry-byebug'
   gem 'rspec-rails'
   gem 'shoulda-matchers'
   gem 'factory_girl_rails'
@@ -27,6 +29,8 @@ group :development, :test do
   gem 'capybara'
   gem 'launchy'
   gem 'poltergeist'
+  gem 'dotenv-rails'
+  gem 'stripe-ruby-mock', '~> 2.3.1', require: 'stripe_mock'
 end
 
 group :development do

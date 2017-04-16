@@ -18,13 +18,16 @@ Feature: Receipt Page
     | name  | email           | password  | password_confirmation |
     | Nubbe | nubbe@nubbe.com | 12345678  | 12345678              |
 
+    @javascript
     Scenario: I complete payment and receive a receipt
       Given I am logged in as "nubbe@nubbe.com"
       And I am on the restaurant menu page for "Nisses Takeaway"
       And I click "Buy" on "Kebabrulle"
       And I click "Checkout"
       And I should see "Total: 180"
-      And I click "Finalize order"
+      And I click the "Pay with Card" stripe button
+      And I fill in my card details on the stripe form
+      And I submit the stripe form
       And I should see "Thank you for your order"
       And I should see "Kebabrulle"
       And I should see "Total: 180"

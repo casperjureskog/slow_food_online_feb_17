@@ -1,3 +1,4 @@
+= stripe_javascript_tag
 %h2 Your Shopping Cart
 %table.shopping-cart
   %tr
@@ -10,14 +11,18 @@
       %td.product-price
         = cart_item.item.price
         SEK
+
   %tr
     %th Total:
     %td
       = @cart.total
       SEK
 - if current_user
-  = form_tag(complete_path(cart_id: session[:cart_id]), method: 'post') do
-    = submit_tag('Finalize order')
+  = form_tag charges_path do
+   = hidden_field_tag :cart_id, @cart.id
+   %script.stripe-button{ src: 'https://checkout.stripe.com/checkout.js',
+       data: {amount: @cart.total*100, description: 'Slowfood', key: ENV['PUBLISHABLE_KEY'], currency: 'sek'}}
 - else
   %h4 Please sign in before Finalize Purchase
   = link_to 'Sign in', new_user_session_path
+
