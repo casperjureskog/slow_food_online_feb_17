@@ -13,8 +13,8 @@ RSpec.describe User, type: :model do
  end
 
  describe 'Associations' do
-   it { is_expected.to have_many :Userrate}
-   it { is_expected.to have_many :shopping_cart}
+   it { is_expected.to have_many :userrates}
+   it { is_expected.to have_many :shopping_carts}
  end
 
  describe 'Factory' do

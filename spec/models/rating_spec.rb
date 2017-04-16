@@ -13,7 +13,7 @@ RSpec.describe Rating, type: :model do
 
   describe 'Associations' do
     it { is_expected.to belong_to :restaurant }
-    it { is_expected.to have_many :Userrate}
+    it { is_expected.to have_many :userrates }
   end
 
   describe 'Factory' do
