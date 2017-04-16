@@ -14,9 +14,14 @@ Feature: Receipt Page
     | name       | price | menu            |
     | Kebabrulle | 180   | Nisses Takeaway |
     | Falafel    | 100   | Nisses Takeaway |
+   Given the following user exist
+    | name  | email           | password  | password_confirmation |
+    | Nubbe | nubbe@nubbe.com | 12345678  | 12345678              |
+
 
     Scenario: I complete payment and receive a receipt
-      Given I am on the restaurant menu page for "Nisses Takeaway"
+      Given I am logged in as "nubbe@nubbe.com"
+      And I am on the restaurant menu page for "Nisses Takeaway"
       And I click "Buy" on "Kebabrulle"
       And I click "Checkout"
       And I should see "Total: 180"

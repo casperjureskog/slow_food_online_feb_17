@@ -23,9 +23,14 @@ Feature: Check if users have sign in before checkout.
       And I click "Buy" on "Kebabrulle"
       And I click "Checkout"
       And I should see "Total: 180"
-      Then show me the page
-      Then I should see "Please sign in before checkout"
+      Then I should see "Please sign in before Finalize Purchase"
       And I should not see "Finalize order"
+
+    Scenario: I buy dishes and go to checkout having sign in
       Given I am logged in as "nubbe@nubbe.com"
+      And I am on the restaurant menu page for "Nisses Takeaway"
+      And I click "Buy" on "Kebabrulle"
+      And I click "Checkout"
+      And I should see "Total: 180"
       And I click "Finalize order"
       And I should see "Thank you for your order"

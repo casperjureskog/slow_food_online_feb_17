@@ -19,5 +19,5 @@
   = form_tag(complete_path(cart_id: session[:cart_id]), method: 'post') do
     = submit_tag('Finalize order')
 - else
-  %h4 Please sign in before checkout
+  %h4 Please sign in before Finalize Purchase
   = link_to 'Sign in', new_user_session_path
