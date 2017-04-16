@@ -3,10 +3,14 @@
 %script(src="https://maps.googleapis.com/maps/api/js?libraries=places&callback=initiateMap" async defer)
 = javascript_include_tag 'landing_page'
 %br
-%h2 What´s your food style?
-= form_tag select_category_path, method: 'post' do |f|
-  =select('post', "category", @restaurants.distinct.pluck(:food_style) {|p| [ p.id , p.food_style ] }, {prompt: 'Choose your style of food!'})
-  = submit_tag 'Submit'
+.row
+  .large-4.medium-4.columns
+    %h4 What´s your food style?
+    = form_tag select_category_path, method: 'post' do |f|
+      =select('post', "category", @restaurants.distinct.pluck(:food_style) {|p| [ p.id , p.food_style ] }, {prompt: 'Choose your style of food!'})
+      = submit_tag 'Submit', class: 'round button'
+  .large-4.medium-4.columns
+  .large-4.medium-4.columns
 %br
 .row
   .large-3.columns
@@ -25,3 +29,4 @@
       =image_tag('bar2.png',style:"height: 10px; width: #{restaurant.rating.rating.round(0).to_i * 28}px;")
       =image_tag('bar.png',style:"height: 10px; width: #{168 - (restaurant.rating.rating.round(0).to_i * 28)}px;")
       %br/
+%br/
