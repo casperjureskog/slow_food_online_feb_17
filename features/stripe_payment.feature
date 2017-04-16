@@ -12,10 +12,14 @@ Feature: As a User
    And the following dishes exist
     | name       | price | menu            |
     | Kebabrulle | 180   | Nisses Takeaway |
+   And the following user exist
+    | name  | email           | password  | password_confirmation |
+    | Nubbe | nubbe@nubbe.com | 12345678  | 12345678              |
 
   @javascript
   Scenario: I check out and pay with my credit card
-    Given I am on the restaurant menu page for "Nisses Takeaway"
+    Given I am logged in as "nubbe@nubbe.com"
+    And I am on the restaurant menu page for "Nisses Takeaway"
     And I click "Buy" on "Kebabrulle"
     And I click "Checkout"
     And I should see "Total: 180"
