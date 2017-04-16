@@ -18,7 +18,6 @@ Feature: Receipt Page
     | name  | email           | password  | password_confirmation |
     | Nubbe | nubbe@nubbe.com | 12345678  | 12345678              |
 
-
     Scenario: I complete payment and receive a receipt
       Given I am logged in as "nubbe@nubbe.com"
       And I am on the restaurant menu page for "Nisses Takeaway"

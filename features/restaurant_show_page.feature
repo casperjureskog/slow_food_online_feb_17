@@ -10,7 +10,7 @@ Feature: Restaurant show page
     Given the following menus exist
      | name            | restaurant  |
      | Nisses Takeaway | NisseKebbab |
-
+  
   Scenario:
     Given I am on the index page
     When I click "NisseKebbab"

@@ -3,18 +3,25 @@
 %script(src="https://maps.googleapis.com/maps/api/js?libraries=places&callback=initiateMap" async defer)
 = javascript_include_tag 'landing_page'
 %br
+%h2 What´s your food style?
+= form_tag select_category_path, method: 'post' do |f|
+  =select('post', "category", @restaurants.distinct.pluck(:food_style) {|p| [ p.id , p.food_style ] }, {prompt: 'Choose your style of food!'})
+  = submit_tag 'Submit'
+%br
 .row
-  .large-4.medium-4.columns
-    %h3 What´s your food style?
-    = form_tag select_category_path, method: 'post' do |f|
-      =select('post', "category", @restaurants.distinct.pluck(:food_style) {|p| [ p.id , p.food_style ] }, {prompt: 'Choose your style of food!'})
-      = submit_tag 'Submit', class: 'round button'
-    %br
-  .large-4.medium-4.columns
-  .large-4.medium-4.columns
-%h4 List Of Restaurants
-%ul
-  - @restaurants.each do |restaurant|
-    %li
+  .large-3.columns
+    %h4 List of Restaurants
+  .large-9.columns
+    %h4 Rating
+.row
+  .large-3.columns
+  .large-9.columns
+    = image_tag('rate_l.png')
+- @restaurants.each do |restaurant|
+  .row
+    .large-3.columns
       = link_to restaurant.name, restaurant_path(restaurant)
+    .large-9.columns
+      =image_tag('bar2.png',style:"height: 10px; width: #{restaurant.rating.rating.round(0).to_i * 28}px;")
+      =image_tag('bar.png',style:"height: 10px; width: #{168 - (restaurant.rating.rating.round(0).to_i * 28)}px;")
       %br/
