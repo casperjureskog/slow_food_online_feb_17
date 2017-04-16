@@ -16,9 +16,13 @@ Feature: Rate restaurant on checkout page
     | name       | price | menu            |
     | Kebabrulle | 180   | Nisses Takeaway |
     | Burger     | 190   | Tasty burgers   |
+   Given the following user exist
+    | name  | email           | password  | password_confirmation |
+    | Nubbe | nubbe@nubbe.com | 12345678  | 12345678              |
 
     Scenario: I complete payment and receive a receipt
-      Given I am on the restaurant menu page for "Nisses Takeaway"
+      Given I am logged in as "nubbe@nubbe.com"
+      And I am on the restaurant menu page for "Nisses Takeaway"
       And I click "Buy" on "Kebabrulle"
       Given I am on the restaurant menu page for "Tasty burgers"
       And I click "Buy" on "Burger"

@@ -12,9 +12,11 @@ class ApplicationController < ActionController::Base
   def get_shopping_cart
     if session[:cart_id]
       @cart = ShoppingCart.find(session[:cart_id])
+      @rating = Rating.find_by(restaurant_id: @cart.shopping_cart_items[0].item.menu.restaurant.id)
     end
     if params[:cart_id]
       @cart = ShoppingCart.find(params[:cart_id])
+      @rating = Rating.find_by(restaurant_id: @cart.shopping_cart_items[0].item.menu.restaurant.id)
     end
   end
 end
