@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :configure_permitted_parameters, if: :devise_controller?
+  before_action :get_shopping_cart
 
   protected
 
@@ -11,7 +12,8 @@ class ApplicationController < ActionController::Base
   def get_shopping_cart
     if session[:cart_id]
       @cart = ShoppingCart.find(session[:cart_id])
-    else
+    end
+    if params[:cart_id]
       @cart = ShoppingCart.find(params[:cart_id])
     end
   end

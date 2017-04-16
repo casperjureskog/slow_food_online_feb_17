@@ -24,7 +24,7 @@ Feature: Add user previous order page with rating
     And I click "Buy" on "Kebabrulle"
     And I click "Checkout"
     And I click "Finalize order"
-    And I click "User page"
+    And I click "Your page"
     Then I should see "Kebabrulle"
     And I select "5" from restaurant rating "NisseKebbab"
     And I click on "Rating" for "NisseKebbab"

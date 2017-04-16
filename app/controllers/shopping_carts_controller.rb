@@ -2,7 +2,7 @@ class ShoppingCartsController < ApplicationController
   before_action :get_shopping_cart, :get_rating
 
   def complete
-    @cart.update(paid: 'true')
+    @cart.update(paid: 'true', user_id: current_user.id)
     session.delete(:cart_id)
   end
 

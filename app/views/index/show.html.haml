@@ -1,0 +1,28 @@
+%h2 Your Shopping Cart
+%table.shopping-cart
+  %tr
+    %th Name
+    %th Price
+  - @cart.shopping_cart_items.each do |cart_item|
+    %tr
+      %td.product-name
+        = cart_item.item.name
+      %td.product-price
+        = cart_item.item.price
+        SEK
+  %tr
+    %th Total:
+    %td
+      = @cart.total
+      SEK
+- @cart.shopping_cart_items.each do |cart_item|
+  %div{class: "rest-#{cart_item.item.menu.restaurant.id}"}
+    = cart_item.item.menu.restaurant.name
+    %br
+    Current Rating
+    = cart_item.item.menu.restaurant.rating.rating.round(2)
+    = form_for @rating, url: update_path(cart_id: @cart.id,id: cart_item.item.menu.restaurant.id),method: 'post' do |f|
+      = f.select(:rating, Rating.rating_range)
+      = f.submit "Rating"
+      %br
+      %br
