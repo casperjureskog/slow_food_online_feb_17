@@ -32,8 +32,9 @@
               - if session[:cart_id]
                 = link_to 'Cart', cart_path(session[:cart_id])
             %li
-              .circle
-                = @cart.shopping_cart_items.count
+              - if session[:cart_id]
+                .circle
+                  = @cart.shopping_cart_items.count
     %p.notice= notice
     %p.alert= alert
   .row
