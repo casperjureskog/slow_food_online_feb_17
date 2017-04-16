@@ -1,12 +1,17 @@
+%br
 #map{style: 'width: 800px; height: 400px'}
 %script(src="https://maps.googleapis.com/maps/api/js?libraries=places&callback=initiateMap" async defer)
 = javascript_include_tag 'landing_page'
 %br
-%h2 What´s your food style?
-= form_tag select_category_path, method: 'post' do |f|
-  =select('post', "category", @restaurants.distinct.pluck(:food_style) {|p| [ p.id , p.food_style ] }, {prompt: 'Choose your style of food!'})
-  = submit_tag 'Submit'
-%br
+.row
+  .large-4.medium-4.columns
+    %h3 What´s your food style?
+    = form_tag select_category_path, method: 'post' do |f|
+      =select('post', "category", @restaurants.distinct.pluck(:food_style) {|p| [ p.id , p.food_style ] }, {prompt: 'Choose your style of food!'})
+      = submit_tag 'Submit', class: 'round button'
+    %br
+  .large-4.medium-4.columns
+  .large-4.medium-4.columns
 %h4 List Of Restaurants
 %ul
   - @restaurants.each do |restaurant|

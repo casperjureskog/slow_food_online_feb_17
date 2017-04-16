@@ -31,12 +31,14 @@
             %li
               - if session[:cart_id]
                 = link_to 'Cart', cart_path(session[:cart_id])
+            %li
+              .circle
                 = @cart.shopping_cart_items.count
-                Items in cart
     %p.notice= notice
     %p.alert= alert
-    = yield
-
+  .row
+    .large-12.columns
+      = yield
   %footer
     .wrap.row.small-up-1.medium-up-3
       .column
