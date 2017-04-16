@@ -24,13 +24,16 @@ Feature: Check if users have sign in before checkout.
       And I click "Checkout"
       And I should see "Total: 180"
       Then I should see "Please sign in before Finalize Purchase"
-      And I should not see "Finalize order"
+      And I should not see "Pay with Card"
 
+    @javascript
     Scenario: I buy dishes and go to checkout having sign in
       Given I am logged in as "nubbe@nubbe.com"
       And I am on the restaurant menu page for "Nisses Takeaway"
       And I click "Buy" on "Kebabrulle"
       And I click "Checkout"
       And I should see "Total: 180"
-      And I click "Finalize order"
+      When I click the "Pay with Card" stripe button
+      And I fill in my card details on the stripe form
+      And I submit the stripe form
       And I should see "Thank you for your order"
