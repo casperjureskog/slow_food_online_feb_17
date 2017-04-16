@@ -10,7 +10,8 @@ Restaurant.delete_all
   food_style= FFaker::Food.meat
   description= FFaker::Sport.name
 
- restaurant = Restaurant.create(name: name,
+
+restaurant = Restaurant.create(name: name,
                    street: street,
                    zip_code: zip_code,
                    city: city,

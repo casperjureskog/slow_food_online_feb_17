@@ -14,7 +14,7 @@ Feature: Receipt Page
     | name       | price | menu            |
     | Kebabrulle | 180   | Nisses Takeaway |
     | Falafel    | 100   | Nisses Takeaway |
-
+  
     Scenario: I complete payment and receive a receipt
       Given I am on the restaurant menu page for "Nisses Takeaway"
       And I click "Buy" on "Kebabrulle"
