@@ -12,6 +12,7 @@
 /tmp/*
 !/log/.keep
 !/tmp/.keep
+.DS_store
 
 # Ignore Byebug command history file.
 .byebug_history
@@ -19,3 +20,4 @@
 /vendor
 npm-debug.log
 node_modules/
+.env
