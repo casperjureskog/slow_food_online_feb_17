@@ -3,8 +3,11 @@ class ShoppingCartsController < ApplicationController
 
   def complete
     @cart.update(paid: 'true')
-    session.delete(:cart_id)
-    render :complete
+
+    if @cart.paid = 'true'
+      session.delete(:cart_id)
+      render :complete
+    end
   end
 
   def create
