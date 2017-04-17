@@ -27,6 +27,5 @@ Feature: Add user previous order page with rating
     And I click "Your page"
     Then I should see "Kebabrulle"
     And I select "5" from restaurant rating "NisseKebbab"
-    Then show me the page
     And I click on "Rating" for "NisseKebbab"
     Then I should see "NisseKebbab"s "Rating 3.16"

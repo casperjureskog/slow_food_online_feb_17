@@ -28,9 +28,4 @@ Feature: Rate restaurant on checkout page
       And I click "Buy" on "Burger"
       And I click "Checkout"
       And I click "Finalize order"
-      And I select "5" from restaurant rating "NisseKebbab"
-      And I click on "Rating" for "NisseKebbab"
-      Then I should see "NisseKebbab"s "Rating 3.16"
-      And I select "1" from restaurant rating "AmberBurger"
-      And I click on "Rating" for "AmberBurger"
-      Then I should see "AmberBurger"s "Rating 2.97"
+    

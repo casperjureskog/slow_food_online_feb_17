@@ -1,27 +1,34 @@
 %h2 Your Shopping History
 %table.shopping-cart
   %tr
-    %th Name
-    %th Price
-  - @cart.shopping_cart_items.each do |cart_item|
-    %tr
-      %td.product-name
-        = cart_item.item.name
-      %td.product-price
-        = cart_item.item.price
-        SEK
-  %tr
-    %th Total:
-    %td
-      = @cart.total
-      SEK
-- @cart.shopping_cart_items.each do |cart_item|
-  %div{class: "rest-#{cart_item.item.menu.restaurant.id}"}
-    = cart_item.item.menu.restaurant.name
-    %br
-    Current Rating
-    = cart_item.item.menu.restaurant.rating.rating.round(2)
-    = form_for @rating, url: update_path(cart_id: @cart.id,id: cart_item.item.menu.restaurant.id),method: 'post' do |f|
+    - @cart.each do |cart_x|
+      - cart_x.shopping_cart_items.each do |cart_i|
+        %th
+          = cart_i.item.menu.restaurant.name
+          = cart_x.created_at.strftime('%Y-%m-%d')
+          %div{class: "rest-#{cart_i.item.menu.restaurant.id}"}
+            Current Rating
+            = cart_i.item.menu.restaurant.rating.rating.round(2)
+          %th
+        %tr
+          %th Name
+          %th Price
+          - cart_x.shopping_cart_items.each do |cart_item|
+            %tr
+              %td.product-name
+                = cart_item.item.name
+              %td.product-price
+                = cart_item.item.price
+                SEK
+          %tr
+            %th Total:
+            %td
+              = cart_x.total
+              SEK
+
+- if @usr.check == true
+  %div{class: "rest-#{Rating.find(@usr.rating_id).restaurant_id}"}
+    = form_for @rating, url: update_path(id: Rating.find(@usr.rating_id).restaurant_id),method: 'post' do |f|
       = f.select(:rating, Rating.rating_range)
       = f.submit "Rating"
       %br

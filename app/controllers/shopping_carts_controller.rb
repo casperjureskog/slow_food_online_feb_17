@@ -3,6 +3,8 @@ class ShoppingCartsController < ApplicationController
 
   def complete
     @cart.update(paid: 'true', user_id: current_user.id)
+    @usr = Userrate.new(check: true ,user_id: current_user.id,rating_id: @cart.shopping_cart_items[0].item.menu.restaurant.rating.id)
+    @usr.save
     session.delete(:cart_id)
   end
 

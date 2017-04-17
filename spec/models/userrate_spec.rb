@@ -13,8 +13,4 @@ require 'rails_helper'
    it { is_expected.to have_one :user }
    it { is_expected.to have_one :rating }
   end
-
-  it 'should have valid Factory' do
-    expect(create(:userrate)).to be_valid
-  end
 end
