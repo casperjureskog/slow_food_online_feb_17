@@ -12,7 +12,7 @@ class IndexController < ApplicationController
   def show
     @cart = ShoppingCart.where(user_id: current_user.id,paid: 'true')
     @rating = Rating.first
-    @usr = Userrate.find_by(user_id: current_user.id)
-
+    @usr = Userrate.find_by(user_id: current_user.id, check: true )
+    @userr = Userrate.where(user_id: current_user.id, check: true )
   end
 end
