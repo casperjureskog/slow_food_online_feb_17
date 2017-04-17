@@ -7,11 +7,23 @@ class ShoppingCartsController < ApplicationController
       @usr = Userrate.new(check: true ,user_id: current_user.id,rating_id: @cart.shopping_cart_items[0].item.menu.restaurant.rating.id)
       @usr.save
     end
-    session.delete(:cart_id)
+    if @cart.paid = 'true'
+      session.delete(:cart_id)
+      render :complete
+    end
+  end
+
+  def create
+    charge = StripePayment.perform_transaction(params, @cart)
+    if charge.class == Stripe::Charge
+      redirect_to complete_path, notice: 'Transaction completed'
+    else
+      flash[:notice] = charge
+      redirect_to cart_path(@cart)
+    end
   end
 
   def show
-
   end
 
   private

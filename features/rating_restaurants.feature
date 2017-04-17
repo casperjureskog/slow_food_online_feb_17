@@ -20,6 +20,7 @@ Feature: Rate restaurant on checkout page
     | name  | email           | password  | password_confirmation |
     | Nubbe | nubbe@nubbe.com | 12345678  | 12345678              |
 
+    @javascript
     Scenario: I complete payment and receive a receipt
       Given I am logged in as "nubbe@nubbe.com"
       And I am on the restaurant menu page for "Nisses Takeaway"
@@ -27,5 +28,12 @@ Feature: Rate restaurant on checkout page
       Given I am on the restaurant menu page for "Tasty burgers"
       And I click "Buy" on "Burger"
       And I click "Checkout"
-      And I click "Finalize order"
-    
+      And I click the "Pay with Card" stripe button
+      And I fill in my card details on the stripe form
+      And I submit the stripe form
+      And I select "5" from restaurant rating "NisseKebbab"
+      And I click on "Rating" for "NisseKebbab"
+      Then I should see "NisseKebbab"s "Rating 3.16"
+      And I select "1" from restaurant rating "AmberBurger"
+      And I click on "Rating" for "AmberBurger"
+      Then I should see "AmberBurger"s "Rating 2.97"

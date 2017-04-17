@@ -7,8 +7,6 @@
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
     %script{ src: 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js' }
-    %script{ src: 'http://maps.google.com/maps/api/js?sensor=tru', :type => 'text/javascript'}
-    %script{ src: 'https://cdnjs.cloudflare.com/ajax/libs/gmaps.js/0.4.25/gmaps.js' }
 
   %body
     - if current_user
@@ -34,12 +32,15 @@
             %li
               - if session[:cart_id]
                 = link_to 'Cart', cart_path(session[:cart_id])
-                = @cart.shopping_cart_items.count
-                Items in cart
+            %li
+              - if session[:cart_id]
+                .circle
+                  = @cart.shopping_cart_items.count
     %p.notice= notice
     %p.alert= alert
-    = yield
-
+  .row
+    .large-12.columns
+      = yield
   %footer
     .wrap.row.small-up-1.medium-up-3
       .column
