@@ -21,18 +21,24 @@ Feature: Add user previous order page with rating
     | name  | email           | password  | password_confirmation |
     | Nubbe | nubbe@nubbe.com | 12345678  | 12345678              |
 
+  @javascript
   Scenario: User whants to see previeus orders and rate resturants
     Given I am logged in as "nubbe@nubbe.com"
     And I am on the restaurant menu page for "Nisses Takeaway"
     And I click "Buy" on "Kebabrulle"
     And I click "Checkout"
-    And I click "Finalize order"
+    And I click the "Pay with Card" stripe button
+    And I fill in my card details on the stripe form
+    And I submit the stripe form
     And I am on the restaurant menu page for "Tasty burgers"
     And I click "Buy" on "Burger"
     And I click "Checkout"
-    And I click "Finalize order"
+    And I click the "Pay with Card" stripe button
+    And I fill in my card details on the stripe form
+    And I submit the stripe form
     And I click "Your page"
     Then I should see "Kebabrulle"
+    Then show me the page
     And I select "5" from restaurant rating "NisseKebbab"
     And I click on "Rating" for "NisseKebbab"
     And I select "1" from restaurant rating "AmberBurger"
