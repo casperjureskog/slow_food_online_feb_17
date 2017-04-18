@@ -12,8 +12,7 @@ class ApplicationController < ActionController::Base
   def get_shopping_cart
     if session[:cart_id]
       @cart = ShoppingCart.find(session[:cart_id])
-    end
-    if params[:cart_id]
+    elsif params[:cart_id]
       @cart = ShoppingCart.find(params[:cart_id])
     end
   end
